@@ -1,0 +1,5 @@
+INDEX VERSION 1.130+C:\Programacion\Tema 04.Strings\wks04\.metadata\.plugins\org.eclipse.jdt.core
+2481666854.index
+3816935337.index
+2300818861.index
+2055773715.index

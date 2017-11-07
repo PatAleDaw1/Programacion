@@ -1,0 +1,29 @@
+/*Escribir un programa que pida por teclado una cadena y una letra, de manera que 
+ponga  en  mayúsculas  cada  ocurrencia  de  la  letra  que  haya  en  la  cadena  y  lo 
+muestre por pantalla*/
+
+import java.util.*;
+public class T04Hj2_1 {
+
+	public static void main(String[] args){
+		Scanner teclado = new Scanner(System.in);
+		String cadena1;
+		int letra, letra2;
+		int k;
+		
+		System.out.println("Dame una cadena:  ");
+		cadena1 = teclado.nextLine();
+		System.out.println("Dame una letra:  ");
+		
+		for (k=0; k<=cadena1.length(); k++)
+		{
+			letra = cadena1.charAt(k);
+			if (cadena1.charAt(k) == letra)
+			{
+				letra2= letra + 32;
+				 cadena1 = cadena1.replace(letra, letra2);
+			}
+		}
+
+	}//main
+}//class

@@ -1,0 +1,33 @@
+/*Escribe un programa que pida  por teclado una cadena y una letra, de manera que elimine las 3 
+ * primeras ocurrencias de la letra que encuentre en la cadena y lo muestre por pantalla.*/
+import java.util.*;
+public class T04Hj2_2 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		
+		String cadena1, cadena2;
+		char letra, letra2;
+		int k, conta;
+				
+		System.out.println("Dame una cadena:  ");
+		cadena1 = teclado.nextLine();
+		System.out.println("Dame una letra:  ");
+		letra = teclado.nextLine().charAt(0);
+		conta=0;
+		letra2= ' ';
+		cadena2="ahora";
+		for(k=0; k<=cadena1.length(); k++){
+			if(cadena1.charAt(k) == letra){
+				conta= conta+1;
+				if(conta<=3){
+					cadena2 = cadena1.replace(cadena1.charAt(k),letra2);
+				}
+			}
+		}
+		System.out.println(cadena2);
+		
+
+	}//main
+
+}//class
