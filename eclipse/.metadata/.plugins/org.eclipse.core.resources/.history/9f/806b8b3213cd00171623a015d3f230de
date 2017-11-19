@@ -1,0 +1,30 @@
+import java.util.*;
+public class T4_Strings_02 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String cadena;
+		int contador, m;
+		
+		System.out.println("Dame una cadena de no mas de 80 caracteres: ");
+		cadena = teclado.nextLine();
+		
+		while(cadena.length()>80)
+		{
+			System.out.println("Dame una cadena de no mas de 80 caracteres: ");
+			cadena = teclado.nextLine();
+		}
+		
+		for(contador=0;contador<=cadena.length(); contador++)
+		{
+			System.out.printf("\t \n Linea %2d",(contador+1));
+			for(m=0;m<=contador;m++)
+			{
+				System.out.print(cadena.charAt(m));
+			}
+			
+		}
+		
+	}//main
+
+}//class

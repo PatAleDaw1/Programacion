@@ -1,0 +1,11 @@
+import java.util.*;
+public class H3Ej40 {
+
+	public static void main(String[] args) {
+		int conta;
+		int matriz[][][] = new int [3][4][5];
+		
+
+	}
+
+}

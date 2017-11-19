@@ -1,0 +1,103 @@
+//condiciones: 0-3 numeros, 4 letra, 5 numero 1-2, 6-7 cualquier.
+import java.util.*;
+public class T4_Strings_09 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		String codigo, ano, sexo, curso;
+		int correctos , anoNuevo, cursoNuevo, erroneos =0 , hombres = 0, mujeres = 0, primero = 0, segundo = 0;
+		int codBueno=0, anoCorrecto=0, stop=0;
+		System.out.printf("_____________________________________________ \n");
+		System.out.printf("Dame tu codigo de alumno ");
+		
+		codigo = teclado.nextLine();
+		System.out.printf("_____________________________________________ \n");
+		codigo = codigo.toUpperCase();
+		ano = codigo.substring(0, 4);
+		sexo = codigo.substring(4, 5);
+		curso = codigo.substring(5, 6);
+
+		cursoNuevo = Integer.parseInt(curso);
+		anoNuevo = Integer.parseInt(ano);
+
+		System.out.println("Estos son tus datos:");
+		System.out.println("- Año: " + anoNuevo);
+		System.out.println("- Sexo: " + sexo);
+		System.out.println("- Curso: " + cursoNuevo + "º");
+
+		while (codigo.equalsIgnoreCase("00000000")==false)
+		{
+			System.out.println("{codigo registrado: " + codigo + "}");
+			correctos=0;
+			System.out.printf("\n empezamos con el test... \n");
+			
+			if (stop == 0 && anoNuevo >=1990 && anoNuevo <=1995)
+			{
+				anoCorrecto=1;
+			}
+
+			if (stop == 0 && anoCorrecto==1 && sexo.charAt(0)=='H')
+			{
+				hombres++;
+				correctos++;
+			}
+			else if (stop == 0 && anoCorrecto==1 && sexo.charAt(0)=='M')
+			{
+				mujeres++;
+				correctos++;
+			}
+			else
+			{
+				stop=1;
+			}
+
+			
+			if (stop == 0 && anoCorrecto==1 && curso.equals("1")==true)
+			{
+				correctos++;
+				primero++;
+			}
+
+			else if (stop == 0 && anoCorrecto==1 && curso.equals("2")==true)
+			{
+				correctos++;
+				segundo++;
+			}
+			
+			if (stop == 0 && correctos == 2 && anoNuevo>=1990 && anoNuevo<=1995)
+			{
+				codBueno++;
+			}
+			else
+			{
+				erroneos++;
+			}
+
+			System.out.println("-- Resultados hasta el momento --");
+			System.out.println("- Hombres: " + hombres);
+			System.out.println("- Mujeres: " + mujeres);
+			System.out.println("Curso 1: " + primero);
+			System.out.println("Curso 2: " + segundo);
+			System.out.println("- Codigos totales: " +codBueno);
+			System.out.println("- errores: " + erroneos);
+
+			System.out.println("Dame tu codigo de alumno");
+			codigo = teclado.nextLine();
+			codigo = codigo.toUpperCase();
+			ano = codigo.substring(0, 4);
+			sexo = codigo.substring(4, 5);
+			curso = codigo.substring(5, 6);
+
+			cursoNuevo = Integer.parseInt(curso);
+			anoNuevo = Integer.parseInt(ano);
+			System.out.printf("\n --Estos son tus datos: -- \n");
+			System.out.println("Año: " +anoNuevo);
+			System.out.println("Sexo: " + sexo);
+			System.out.println("Curso: " + cursoNuevo + "º");
+		}//while general
+
+		System.out.println("{ FIN }");
+
+	}//main
+
+}//class
